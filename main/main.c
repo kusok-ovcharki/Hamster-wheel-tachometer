@@ -253,7 +253,7 @@ void app_main(void)
 			
 			if (oldtime>0 && time_between<4000){
 				float rpm = (1000/ (float)time_between)*60;
-				float speed = rpm * DIA * 0.75398;
+				float speed = rpm * (DIA-0.1) * 0.75398; // 0.1 - расстояние от края колеса до магнита
 				int_speed = speed * 100;
 				// printf("RPM: %f, Speed: %.1f \n", rpm, speed);
 				// printf("Speed: %" PRIi32 " \n", int_speed);
